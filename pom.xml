@@ -54,8 +54,9 @@
 		<dropbox.repo>${dropbox.path}/mvn-repo</dropbox.repo>
 		<dropbox.site>${dropbox.path}/www/docs</dropbox.site>
 		
-		<debug>true</debug>
 		<detail>true</detail>
+		<verbose>${detail}</verbose>
+		<debug>${debug}</debug>
 		<indentSize>3</indentSize>
 		<lineLength>120</lineLength>
 		<description>${co_name} Corporate Parent POM for Maven</description>
@@ -505,26 +506,25 @@
 					<!-- <docfilessubdirs></docfilessubdirs>-->					
 						<!-- <includeDependencySources>true</includeDependencySources> -->
 						<!-- <includeTransitiveDependencySources>true</includeTransitiveDependencySources>-->
-						<javadocVersion>1.5</javadocVersion>
+						<!-- <javadocVersion>1.5</javadocVersion>-->
 						<keywords>true</keywords>
 					<level>private</level>
 					<linksource>true</linksource>
 					<old>true</old>
 					<show>private</show>
-					<stylesheet>maven</stylesheet>
+					<stylesheet>java</stylesheet>
 					<validateLinks>true</validateLinks>
-					<linksourcetab>${indentSize}</linksourcetab>
 					<!-- <locale>en</locale> -->
 					<serialwarn>true</serialwarn>
 					<source>${java.version}</source>
 					<sourcetab>${indentSize}</sourcetab>
 					<splitindex>true</splitindex>
-					<!-- 
+					
 					<packagesheader>${project.name} Project</packagesheader>
 					<top>Free Code for a Free World</top>
 					<footer>InnovAnon, Inc.</footer>
 					<header>Innovations Anonymous</header>
-					-->
+					
 					<!-- 
 					<resourcesArtifacts>
 					<resourcesArtifact>
