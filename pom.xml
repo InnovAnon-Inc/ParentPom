@@ -375,6 +375,14 @@
 				<configuration>
 				<includePom>true</includePom>
 				</configuration>
+				  <executions>
+    <execution>
+      <id>attach-sources</id>
+      <goals>
+        <goal>jar</goal>
+      </goals>
+    </execution>
+  </executions>
 			</plugin>
   
   <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-assembly-plugin -->  
@@ -416,7 +424,7 @@
 				<inherited>true</inherited>
 				<configuration>
 				<generateSitemap>true</generateSitemap>
-				<!-- <topSiteURL></topSiteURL> -->
+				<topSiteURL>${project.url}</topSiteURL>
 				 <validate>true</validate>				
 				</configuration>
 				<dependencies>
@@ -434,6 +442,18 @@
     <version>${doxia-site-renderer.version}</version>
 </dependency>
 				</dependencies>
+			</plugin>
+			
+			<plugin>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<executions>
+    <execution>
+      <id>attach-javadocs</id>
+      <goals>
+        <goal>jar</goal>
+      </goals>
+    </execution>
+  </executions>
 			</plugin>
 		</plugins>
 	</build>
@@ -488,10 +508,10 @@
 					<source>${java.version}</source>
 					<sourcetab>${indentSize}</sourcetab>
 					<splitindex>true</splitindex>
-					<packagesheader>Innovations Anonymous</packagesheader>
-					<top>Om Krim Krim Krim Hum Hum Hrim Hrim Daksine Kalike</top>
-					<footer>Krim Krim Krim Hum Hum Hrim Hrim Svaha</footer>
-					<header>Free Code for a Free World</header>
+					<packagesheader>InnovAnon, Inc.</packagesheader>
+					<top>Free Code for a Free World</top>
+					<footer>Innovations Anonymous</footer>
+					<header>Project ${project.name}</header>
 				</configuration>
 			</plugin>
 			
