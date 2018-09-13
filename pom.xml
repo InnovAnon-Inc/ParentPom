@@ -429,10 +429,10 @@
 				<generateSitemap>true</generateSitemap>
 				
 				<!--<topSiteURL>${project.url_top}</topSiteURL>-->
-				  <topSiteURL>${project.url}</topSiteURL> 
+			  <!-- <topSiteURL>${project.url}</topSiteURL>  -->
 				 
 				 <validate>true</validate>
-				 <saveProcessedContent>true</saveProcessedContent>				
+				 <!-- <saveProcessedContent>true</saveProcessedContent>	-->			
 				</configuration>
 				<dependencies>
 				<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
