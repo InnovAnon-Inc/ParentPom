@@ -56,7 +56,7 @@
 		
 		<detail>true</detail>
 		<verbose>${detail}</verbose>
-		<debug>${debug}</debug>
+		<debug>${verbose}</debug>
 		<indentSize>3</indentSize>
 		<lineLength>120</lineLength>
 		<description>${co_name} Corporate Parent POM for Maven</description>
