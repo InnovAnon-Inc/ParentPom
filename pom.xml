@@ -512,9 +512,9 @@
 					<source>${java.version}</source>
 					<sourcetab>${indentSize}</sourcetab>
 					<splitindex>true</splitindex>
-					<!-- <packagesheader>InnovAnon, Inc.</packagesheader>-->
+					<packagesheader>Innovations Anonymous</packagesheader>
 					<top>Free Code for a Free World</top>
-					<footer>Innovations Anonymous</footer>
+					<footer>InnovAnon, Inc.</footer>
 					<header>Project ${project.name}</header>
 					<!-- 
 					<resourcesArtifacts>
