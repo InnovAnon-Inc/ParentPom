@@ -445,7 +445,70 @@
 			</plugin>
 			
 			<plugin>
-			<artifactId>maven-javadoc-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>${maven-javadoc-plugin.version}</version>
+				<inherited>true</inherited>
+				<configuration>
+					<defaultAuthor>${co_name}</defaultAuthor>
+					<!--  <charset></charset>-->
+					<description>${description}</description>	
+					<detectLinks>true</detectLinks>
+					<!-- <docfilessubdirs></docfilessubdirs>-->					
+						<!-- <includeDependencySources>true</includeDependencySources> -->
+						<!-- <includeTransitiveDependencySources>true</includeTransitiveDependencySources>-->
+						<javadocVersion>1.5</javadocVersion>
+						<keywords>true</keywords>
+					<level>private</level>
+					<linksource>true</linksource>
+					<old>true</old>
+					<show>private</show>
+					<stylesheet>maven</stylesheet>
+					<validateLinks>true</validateLinks>
+					<linksourcetab>${indentSize}</linksourcetab>
+					<!-- <locale>en</locale> -->
+					<serialwarn>true</serialwarn>
+					<source>${java.version}</source>
+					<sourcetab>${indentSize}</sourcetab>
+					<splitindex>true</splitindex>
+					<packagesheader>InnovAnon, Inc.</packagesheader>
+					<top>Free Code for a Free World</top>
+					<footer>Innovations Anonymous</footer>
+					<header>Project ${project.name}</header>
+					<resourcesArtifacts>
+					<resourcesArtifact>
+					<groupId>com.innovanon.javadoxx</groupId>
+					<artifactId>JavaDoxx</artifactId>
+					<version>0.0.1-SNAPSHOT</version>
+					</resourcesArtifact>
+					</resourcesArtifacts>
+					<doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
+            <!-- <docletArtifact>
+            --><!-- https://search.maven.org/artifact/org.umlgraph/doclet -->
+            <!--     <groupId>org.umlgraph</groupId>
+                <artifactId>doclet</artifactId>
+                <version>5.1</version>
+            </docletArtifact>
+            <additionalparam>
+                -inferrel -attributes -types -visibility -inferdep -quiet -hide java.* -collpackages java.util.* -qualify -postfixpackage
+                -nodefontsize 9
+                -nodefontpackagesize 7
+            </additionalparam>
+            -->
+            <!-- https://search.maven.org/artifact/org.umlgraph/umlgraph/5.6.6/jar -->
+            <doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>                         
+                <docletArtifact>                                                         
+                    <groupId>org.umlgraph</groupId>                                      
+                    <artifactId>umlgraph</artifactId>                                    
+                    <version>5.6.6</version>                                               
+                </docletArtifact>                                                        
+                <additionalparam>-views -all</additionalparam>                           
+                <useStandardDocletOptions>true</useStandardDocletOptions>
+				</configuration>
+		
+			
+			
+			
 			<executions>
     <execution>
       <id>attach-javadocs</id>
@@ -479,7 +542,7 @@
 				<!--  <licenseFileEncoding>UTF-8</licenseFileEncoding>				 -->
 				</configuration>
 			</plugin>
-
+<?ignore
 			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-javadoc-plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -543,7 +606,7 @@
                 <useStandardDocletOptions>true</useStandardDocletOptions>
 				</configuration>
 			</plugin>
-			
+>			
 			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jxr-plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
