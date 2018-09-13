@@ -505,13 +505,13 @@
 					<!-- <docfilessubdirs></docfilessubdirs>-->					
 						<!-- <includeDependencySources>true</includeDependencySources> -->
 						<!-- <includeTransitiveDependencySources>true</includeTransitiveDependencySources>-->
-						<javadocVersion>1.5</javadocVersion>
+						<!-- <javadocVersion>1.5</javadocVersion> -->
 						<keywords>true</keywords>
 					<level>private</level>
 					<linksource>true</linksource>
-					<old>true</old>
+					<!-- <old>true</old> -->
 					<show>private</show>
-					<stylesheet>maven</stylesheet>
+					<!-- <stylesheet>maven</stylesheet> -->
 					<validateLinks>true</validateLinks>
 					<linksourcetab>${indentSize}</linksourcetab>
 					<!-- <locale>en</locale> -->
