@@ -52,8 +52,14 @@
 		<dropbox.path>${dropbox.domain}/Dropbox</dropbox.path>
 		<dropbox.repo>${dropbox.path}/mvn-repo</dropbox.repo>
 		<dropbox.site>${dropbox.path}/www/docs/${project.artifactId}</dropbox.site>
+		
+		<debug>false</debug>
+		<detail>false</detail>
+		<indentSize>3</indentSize>
+		<lineLength>120</lineLength>
+		<description>${co_name} Corporate Parent POM for Maven</description>
 
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!--<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
 		<java.version>1.8</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
@@ -61,7 +67,8 @@
 		<targetJdk>${java.version}</targetJdk>
 
 		<aspectj.plugin.version>1.11</aspectj.plugin.version>
-		<aspectj.version>${java.version}.1</aspectj.version>
+		<!--<aspectj.version>${java.version}.1</aspectj.version>-->
+		<aspectj.version>1.9.1</aspectj.version>
 		<reflections.version>0.9.11</reflections.version>
 		<groovy.version>2.5.1</groovy.version>
 		<dom4j.version>1.6.1</dom4j.version>
@@ -91,7 +98,7 @@
 
 	<name>${project.artifactId}</name>
 	<url>${project.url}</url>
-	<description>${co_name} Corporate Parent POM for Maven</description>
+	<description>${description}</description>
 
 	<issueManagement>
 		<system>Bugzilla</system>
@@ -266,7 +273,7 @@
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 					<complianceLevel>${java.version}</complianceLevel>
-						<verbose>true</verbose>
+						<verbose>${verbose}</verbose>
 					<showWeaveInfo>true</showWeaveInfo>
 				</configuration>
 				<executions>
@@ -294,6 +301,9 @@
 				<artifactId>gmavenplus-plugin</artifactId>
 				<version>${gmavenplus-plugin.version}</version>
 				<inherited>true</inherited>
+				<configuration>
+					<verbose>${verbose}</verbose>
+				</configuration>
 				<executions>
 					<execution>
 						<phase>generate-resources</phase>
@@ -348,6 +358,10 @@
 						<manifest>
 							<mainClass>${project.groupId}.${project.artifactId}.App</mainClass>
 						</manifest>
+						<addMavenDescriptor>true</addMavenDescriptor>
+						<compress>true</compress>
+						<index>true</index>
+						<recompressAddedZips>true</recompressAddedZips>
 					</archive>
 				</configuration>
 			</plugin>
@@ -358,6 +372,9 @@
 				<artifactId>maven-source-plugin</artifactId>
 				<version>${maven-source-plugin.version}</version>
 				<inherited>true</inherited>
+				<configuration>
+				<includePom>true</includePom>
+				</configuration>
 			</plugin>
   
   <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-assembly-plugin -->  
@@ -384,6 +401,9 @@
 					<optimize>true</optimize>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
+					<encoding>UTF-8</encoding>
+					<!-- <release></release>  -->
+					<debug>${debug}</debug>
 				</configuration>
 			</plugin>
 			
@@ -393,6 +413,11 @@
 				<artifactId>maven-site-plugin</artifactId>
 				<version>${maven-site-plugin.version}</version>
 				<inherited>true</inherited>
+				<configuration>
+				<generateSitemap>true</generateSitemap>
+				<!-- <topSiteURL></topSiteURL> -->
+				<validate>true</validate>				
+				</configuration>
 				<dependencies>
 				<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
 <dependency>
@@ -429,6 +454,9 @@
 				<artifactId>maven-project-info-reports-plugin</artifactId>
 				<version>${maven-project-info-reports-plugin.version}</version>
 				<inherited>true</inherited>
+				<configuration>
+				<licenseFileEncoding>UTF-8</licenseFileEncoding>				
+				</configuration>
 			</plugin>
 
 			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-javadoc-plugin -->
@@ -438,23 +466,31 @@
 				<version>${maven-javadoc-plugin.version}</version>
 				<inherited>true</inherited>
 				<configuration>
-					<author>InnovAnon, Inc.</author>
-					<defaultAuthor>InnovAnon, Inc.</defaultAuthor>
-					<defaultSince>2010</defaultSince>
+					<defaultAuthor>${co_name}</defaultAuthor>
+					<!--  <charset></charset>-->
+					<description>${description}</description>				
 					<detectLinks>true</detectLinks>
-					<footer>Om Krim Krim Krim Hum Hum Hrim Hrim Daksine Kalike
-						Krim Krim
-						Krim Hum Hum Hrim Hrim Svaha</footer>
-					<header>Om Krim Krim Krim Hum Hum Hrim Hrim Daksine Kalike
-						Krim Krim
-						Krim Hum Hum Hrim Hrim Svaha</header>
+					<!-- <docfilessubdirs></docfilessubdirs>-->					
+						<includeDependencySources>true</includeDependencySources>
+						<includeTransitiveDependencySources>true</includeTransitiveDependencySources>
+						<javadocVersion>${java.version}</javadocVersion>
+						<keywords>true</keywords>
 					<level>private</level>
 					<linksource>true</linksource>
 					<old>true</old>
-					<packagesheader>Free Code for a Free World</packagesheader>
 					<show>private</show>
 					<stylesheet>maven</stylesheet>
 					<validateLinks>true</validateLinks>
+					<linksourcetab>${indentSize}</linksourcetab>
+					<locale>UTF-8</locale>
+					<serialwarn>true</serialwarn>
+					<source>${java.version}</source>
+					<sourcetab>${indentSize}</sourcetab>
+					<splitindex>true</splitindex>
+					<packagesheader>Innovations Anonymous</packagesheader>
+					<top>Om Krim Krim Krim Hum Hum Hrim Hrim Daksine Kalike</top>
+					<footer>Krim Krim Krim Hum Hum Hrim Hrim Svaha</footer>
+					<header>Free Code for a Free World</header>
 				</configuration>
 			</plugin>
 			
@@ -472,6 +508,9 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${maven-surefire-plugin.version}</version>
 				<inherited>true</inherited>
+				<configuration>
+				<runOrder>random</runOrder>				
+				</configuration>
 			</plugin>
 
 			<!-- https://mvnrepository.com/artifact/com.atlassian.maven.plugins/maven-clover2-plugin -->
@@ -485,7 +524,6 @@
 			 -->
 			 
 			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-pmd-plugin -->
-			<!-- 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-pmd-plugin</artifactId>
@@ -494,16 +532,24 @@
 				<configuration>
 					<targetjdk>${java.version}</targetjdk>
 					<rulesets>
+					<!-- 
 						<ruleset>/rulesets/basic.xml</ruleset>
 						<ruleset>/rulesets/controversial.xml</ruleset>
+					-->
+						<ruleset>/category/java/bestpractices.xml</ruleset>
 					</rulesets>
 					<format>xml</format>
 					<linkXref>true</linkXref>
-					<sourceEncoding>utf-8</sourceEncoding>
+					<sourceEncoding>UTF-8</sourceEncoding>
 					<minimumTokens>100</minimumTokens>
+					<!-- <aggregate></aggregate>-->
+					<analysisCache>true</analysisCache>
+					<benchmark>true</benchmark>
+					<includeTests>true</includeTests>
+					<includeXmlInSite>true</includeXmlInSite>
+					<verbose>${verbose}</verbose>
 				</configuration>
 			</plugin>
-	-->
 	
 			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-changes-plugin -->
 			<plugin>
@@ -511,6 +557,15 @@
 				<artifactId>maven-changes-plugin</artifactId>
 				<version>${maven-changes-plugin.version}</version>
 				<inherited>true</inherited>
+				<configuration>
+				<addActionDate>true</addActionDate>
+				<generateJiraAnnouncement>true</generateJiraAnnouncement>
+				<includeOpenIssues>true</includeOpenIssues>
+				<onlyMilestoneIssues>false</onlyMilestoneIssues>
+				<smtpHost>localhost</smtpHost>
+				<!-- <sslMode>true</sslMode> -->
+				<!--<startTls>true</startTls> -->
+				</configuration>
 			</plugin>
 			
 			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>changelog-maven-plugin</artifactId> 
