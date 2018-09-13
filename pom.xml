@@ -128,6 +128,7 @@
 				<role>Senior Ministerial Director</role>
 				<role>Senior Managing Director</role>
 				<role>Project Manager</role>
+				<role>Lead Researcher</role>
 				<role>Software Architect</role>
 				<role>Software Engineer</role>
 				<role>Dev Ops Engineer</role>
@@ -428,7 +429,9 @@
 				<!-- 
 				<topSiteURL>${project.url_top}</topSiteURL>
 				 -->
+				 <!-- 
 				 <topSiteURL>${project.url}</topSiteURL>
+				 -->
 				 <validate>true</validate>				
 				</configuration>
 				<dependencies>
