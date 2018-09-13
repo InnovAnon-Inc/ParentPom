@@ -59,7 +59,8 @@
 		<lineLength>120</lineLength>
 		<description>${co_name} Corporate Parent POM for Maven</description>
 
-		<!--<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
 		<java.version>1.8</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
@@ -358,10 +359,9 @@
 						<manifest>
 							<mainClass>${project.groupId}.${project.artifactId}.App</mainClass>
 						</manifest>
-						<addMavenDescriptor>true</addMavenDescriptor>
+						<!--<addMavenDescriptor>true</addMavenDescriptor>
 						<compress>true</compress>
-						<index>true</index>
-						<recompressAddedZips>true</recompressAddedZips>
+						<recompressAddedZips>true</recompressAddedZips>-->
 					</archive>
 				</configuration>
 			</plugin>
@@ -373,7 +373,7 @@
 				<version>${maven-source-plugin.version}</version>
 				<inherited>true</inherited>
 				<configuration>
-				<includePom>true</includePom>
+				<!--<includePom>true</includePom>-->
 				</configuration>
 			</plugin>
   
@@ -401,7 +401,8 @@
 					<optimize>true</optimize>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
-					<encoding>UTF-8</encoding>
+					<!-- <encoding>UTF-8</encoding>-->
+					<encoding>${project.build.sourceEncoding}</encoding>
 					<!-- <release></release>  -->
 					<debug>${debug}</debug>
 				</configuration>
@@ -414,9 +415,9 @@
 				<version>${maven-site-plugin.version}</version>
 				<inherited>true</inherited>
 				<configuration>
-				<generateSitemap>true</generateSitemap>
+				<!--<generateSitemap>true</generateSitemap>-->
 				<!-- <topSiteURL></topSiteURL> -->
-				<validate>true</validate>				
+				 <!--<validate>true</validate>-->				
 				</configuration>
 				<dependencies>
 				<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
@@ -469,24 +470,24 @@
 					<defaultAuthor>${co_name}</defaultAuthor>
 					<!--  <charset></charset>-->
 					<description>${description}</description>				
-					<detectLinks>true</detectLinks>
+					<!--<detectLinks>true</detectLinks>-->
 					<!-- <docfilessubdirs></docfilessubdirs>-->					
-						<includeDependencySources>true</includeDependencySources>
-						<includeTransitiveDependencySources>true</includeTransitiveDependencySources>
+						<!--<includeDependencySources>true</includeDependencySources>-->
+						<!-- <includeTransitiveDependencySources>true</includeTransitiveDependencySources>-->
 						<javadocVersion>${java.version}</javadocVersion>
-						<keywords>true</keywords>
+						<!--<keywords>true</keywords>-->
 					<level>private</level>
 					<linksource>true</linksource>
 					<old>true</old>
 					<show>private</show>
 					<stylesheet>maven</stylesheet>
-					<validateLinks>true</validateLinks>
+					<!-- <validateLinks>true</validateLinks>-->
 					<linksourcetab>${indentSize}</linksourcetab>
 					<!-- <locale>en</locale> -->
-					<serialwarn>true</serialwarn>
+					<!-- <serialwarn>true</serialwarn>-->
 					<source>${java.version}</source>
 					<sourcetab>${indentSize}</sourcetab>
-					<splitindex>true</splitindex>
+					<!-- <splitindex>true</splitindex>-->
 					<packagesheader>Innovations Anonymous</packagesheader>
 					<top>Om Krim Krim Krim Hum Hum Hrim Hrim Daksine Kalike</top>
 					<footer>Krim Krim Krim Hum Hum Hrim Hrim Svaha</footer>
