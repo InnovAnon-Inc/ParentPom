@@ -66,12 +66,12 @@
 		<groovy.version>2.5.1</groovy.version>
 		<dom4j.version>1.6.1</dom4j.version>
 
-		<junit.version>3.8.1</junit.version>
+		<junit.version>4.12</junit.version>
 
-		<gmavenplus-plugin.version>1.5</gmavenplus-plugin.version>
-		<maven-jar-plugin.version>2.3.2</maven-jar-plugin.version>
-		<maven-source-plugin.version>2.1.2</maven-source-plugin.version>
-		<maven-assembly-plugin.version>2.5.3</maven-assembly-plugin.version>
+		<gmavenplus-plugin.version>1.6.1</gmavenplus-plugin.version>
+		<maven-jar-plugin.version>3.1.0</maven-jar-plugin.version>
+		<maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+		<maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
 		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
 
 		<maven-site-plugin.version>3.7.1</maven-site-plugin.version>
@@ -214,6 +214,7 @@
 	</profiles>
 
 	<dependencies>
+	<!-- https://search.maven.org/artifact/org.aspectj/aspectjrt -->
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
@@ -221,12 +222,14 @@
 		<!-- <scope>runtime</scope> -->
 		 </dependency> 
 
+<!-- https://mvnrepository.com/artifact/org.reflections/reflections -->
 		<dependency>
 			<groupId>org.reflections</groupId>
 			<artifactId>reflections</artifactId>
 			<version>${reflections.version}</version>
 		</dependency>
 
+<!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all -->
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
@@ -235,12 +238,14 @@
 			<type>pom</type>
 		</dependency>
 
+<!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
 		<dependency>
 			<groupId>dom4j</groupId>
 			<artifactId>dom4j</artifactId>
 			<version>${dom4j.version}</version>
 		</dependency>
 
+<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -251,10 +256,12 @@
 
 	<build>
 		<plugins>
+		<!-- https://mvnrepository.com/artifact/org.codehaus.mojo/aspectj-maven-plugin -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>aspectj-maven-plugin</artifactId>
 				<version>${aspectj.plugin.version}</version>
+				<inherited>true</inherited>
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
@@ -281,10 +288,12 @@
 				</dependencies>
 			</plugin>
 
+<!-- https://mvnrepository.com/artifact/org.codehaus.gmavenplus/gmavenplus-plugin -->
 			<plugin>
 				<groupId>org.codehaus.gmavenplus</groupId>
 				<artifactId>gmavenplus-plugin</artifactId>
 				<version>${gmavenplus-plugin.version}</version>
+				<inherited>true</inherited>
 				<executions>
 					<execution>
 						<phase>generate-resources</phase>
@@ -302,12 +311,14 @@
 					</execution>
 				</executions>
 				<dependencies>
+				<!-- https://mvnrepository.com/artifact/org.reflections/reflections -->
 					<dependency>
 						<groupId>org.reflections</groupId>
 						<artifactId>reflections</artifactId>
 						<version>${reflections.version}</version>
 					</dependency>
 
+<!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-all -->
 					<dependency>
 						<groupId>org.codehaus.groovy</groupId>
 						<artifactId>groovy-all</artifactId>
@@ -316,6 +327,7 @@
 						<type>pom</type>
 					</dependency>
 
+<!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
 					<dependency>
 						<groupId>dom4j</groupId>
 						<artifactId>dom4j</artifactId>
@@ -324,10 +336,12 @@
 				</dependencies>
 			</plugin>
  
+ <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>${maven-jar-plugin.version}</version>
+				<inherited>true</inherited>
 				<configuration>
 					<archive>
 						<index>true</index>
@@ -338,15 +352,20 @@
 				</configuration>
 			</plugin>
  
+ <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-source-plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
 				<version>${maven-source-plugin.version}</version>
+				<inherited>true</inherited>
 			</plugin>
   
+  <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-assembly-plugin -->  
 			<plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>${maven-assembly-plugin.version}</version>
+				<inherited>true</inherited>
 				<configuration>
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
@@ -354,9 +373,12 @@
 				</configuration>
 			</plugin>
 
+<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
 			<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>${maven-compiler-plugin.version}</version>
+				<inherited>true</inherited>
 				<configuration>
 					<compilerVersion>${java.version}</compilerVersion>
 					<optimize>true</optimize>
@@ -370,6 +392,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
 				<version>${maven-site-plugin.version}</version>
+				<inherited>true</inherited>
 				<dependencies>
 				<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
 <dependency>
@@ -377,13 +400,13 @@
     <artifactId>commons-lang3</artifactId>
     <version>${commons-lang3.version}</version>
 </dependency>
+
 <!-- https://mvnrepository.com/artifact/org.apache.maven.doxia/doxia-site-renderer -->
 <dependency>
     <groupId>org.apache.maven.doxia</groupId>
     <artifactId>doxia-site-renderer</artifactId>
     <version>${doxia-site-renderer.version}</version>
 </dependency>
-
 				</dependencies>
 			</plugin>
 		</plugins>
@@ -405,6 +428,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-project-info-reports-plugin</artifactId>
 				<version>${maven-project-info-reports-plugin.version}</version>
+				<inherited>true</inherited>
 			</plugin>
 
 			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-javadoc-plugin -->
@@ -412,6 +436,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>${maven-javadoc-plugin.version}</version>
+				<inherited>true</inherited>
 				<configuration>
 					<author>InnovAnon, Inc.</author>
 					<defaultAuthor>InnovAnon, Inc.</defaultAuthor>
@@ -438,6 +463,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jxr-plugin</artifactId>
 				<version>${maven-jxr-plugin.version}</version>
+				<inherited>true</inherited>
 			</plugin>
 
 			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
@@ -445,6 +471,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${maven-surefire-plugin.version}</version>
+				<inherited>true</inherited>
 			</plugin>
 
 			<!-- https://mvnrepository.com/artifact/com.atlassian.maven.plugins/maven-clover2-plugin -->
@@ -453,6 +480,7 @@
 				<groupId>com.atlassian.maven.plugins</groupId>
 				<artifactId>maven-clover2-plugin</artifactId>
 				<version>${maven-clover2-plugin.version}</version>
+				<inherited>true</inherited>
 			</plugin>
 			 -->
 			 
@@ -462,6 +490,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-pmd-plugin</artifactId>
 				<version>${maven-pmd-plugin.version}</version>
+				<inherited>true</inherited>
 				<configuration>
 					<targetjdk>${java.version}</targetjdk>
 					<rulesets>
@@ -481,16 +510,18 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-changes-plugin</artifactId>
 				<version>${maven-changes-plugin.version}</version>
+				<inherited>true</inherited>
 			</plugin>
 			
 			<!-- <plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>changelog-maven-plugin</artifactId> 
-				</plugin> -->
+				<inherited>true</inherited></plugin> -->
 			
 			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-changelog-plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-changelog-plugin</artifactId>
 				<version>${maven-changelog-plugin.version}</version>
+				<inherited>true</inherited>
 			</plugin>
 
 			<!-- https://mvnrepository.com/artifact/org.codehaus.mojo/taglist-maven-plugin -->
@@ -498,6 +529,7 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>taglist-maven-plugin</artifactId>
 				<version>${taglist-maven-plugin.version}</version>
+				<inherited>true</inherited>
 			</plugin>
 		</plugins>
 	</reporting>
