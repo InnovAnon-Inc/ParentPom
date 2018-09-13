@@ -559,7 +559,9 @@
 					<analysisCache>true</analysisCache>
 					<benchmark>true</benchmark>
 					<includeTests>true</includeTests>
+<!--
 					<includeXmlInSite>true</includeXmlInSite>
+-->
 					<verbose>${verbose}</verbose>
 				</configuration>
 			</plugin>
