@@ -470,11 +470,9 @@
 					<defaultAuthor>${co_name}</defaultAuthor>
 					<!--  <charset></charset>-->
 					<description>${description}</description>	
-<!--			
 					<detectLinks>true</detectLinks>
--->
 					<!-- <docfilessubdirs></docfilessubdirs>-->					
-						<includeDependencySources>true</includeDependencySources>
+						<!-- <includeDependencySources>true</includeDependencySources> -->
 						<!-- <includeTransitiveDependencySources>true</includeTransitiveDependencySources>-->
 						<javadocVersion>${java.version}</javadocVersion>
 						<keywords>true</keywords>
