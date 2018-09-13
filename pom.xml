@@ -52,7 +52,7 @@
 		<dropbox.domain>file:///opt/files</dropbox.domain>
 		<dropbox.path>${dropbox.domain}/Dropbox</dropbox.path>
 		<dropbox.repo>${dropbox.path}/mvn-repo</dropbox.repo>
-		<dropbox.site>${dropbox.path}/www/docs/${project.artifactId}</dropbox.site>
+		<dropbox.site>${dropbox.path}/www/docs</dropbox.site>
 		
 		<debug>true</debug>
 		<detail>true</detail>
@@ -177,7 +177,7 @@
 
 		<site>
 			<id>localDropbox</id>
-			<url>${dropbox.site}/</url>
+			<url>${dropbox.site}</url>
 		</site>
 	</distributionManagement>
 
@@ -425,7 +425,10 @@
 				<inherited>true</inherited>
 				<configuration>
 				<generateSitemap>true</generateSitemap>
+				<!-- 
 				<topSiteURL>${project.url_top}</topSiteURL>
+				 -->
+				 <topSiteURL>${project.url}</topSiteURL>
 				 <validate>true</validate>				
 				</configuration>
 				<dependencies>
@@ -513,10 +516,10 @@
 					<source>${java.version}</source>
 					<sourcetab>${indentSize}</sourcetab>
 					<splitindex>true</splitindex>
-					<packagesheader>Project ${project.name}</packagesheader>
-					<top>Innovations Anonymous</top>
+					<packagesheader>${project.name} Project</packagesheader>
+					<top>Free Code for a Free World</top>
 					<footer>InnovAnon, Inc.</footer>
-					<header>Free Code for a Free World</header>
+					<header>Innovations Anonymous</header>
 					<!-- 
 					<resourcesArtifacts>
 					<resourcesArtifact>
