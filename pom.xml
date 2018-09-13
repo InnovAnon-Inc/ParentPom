@@ -512,7 +512,7 @@
 					<source>${java.version}</source>
 					<sourcetab>${indentSize}</sourcetab>
 					<splitindex>true</splitindex>
-					<packagesheader>InnovAnon, Inc.</packagesheader>
+					<!-- <packagesheader>InnovAnon, Inc.</packagesheader>-->
 					<top>Free Code for a Free World</top>
 					<footer>Innovations Anonymous</footer>
 					<header>Project ${project.name}</header>
@@ -526,8 +526,10 @@
 					</resourcesArtifacts>
 		
 		
-		<stylesheetfile>src/main/resources/stylesheet.css</stylesheetfile>
+		<stylesheetfile>${basedir}/src/main/resources/stylesheet.css</stylesheetfile>
+		<bootclasspath>${sun.boot.class.path}</bootclasspath>
 		-->
+		
 				<!-- 	<doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
             	 <docletArtifact>
             --><!-- https://search.maven.org/artifact/org.umlgraph/doclet -->
