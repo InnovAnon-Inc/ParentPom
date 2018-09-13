@@ -427,10 +427,9 @@
 				<inherited>true</inherited>
 				<configuration>
 				<generateSitemap>true</generateSitemap>
-				<!-- 
+				
 				<topSiteURL>${project.url_top}</topSiteURL>
-				 -->
-				 <topSiteURL>${project.url}</topSiteURL>
+				 <!-- <topSiteURL>${project.url}</topSiteURL> -->
 				 
 				 <validate>true</validate>
 				 <saveProcessedContent>true</saveProcessedContent>				
