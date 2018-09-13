@@ -359,11 +359,9 @@
 						<manifest>
 							<mainClass>${project.groupId}.${project.artifactId}.App</mainClass>
 						</manifest>
-<!-- 
 						<addMavenDescriptor>true</addMavenDescriptor>
 						<compress>true</compress>
 						<recompressAddedZips>true</recompressAddedZips>
- -->
 					</archive>
 				</configuration>
 			</plugin>
@@ -374,11 +372,9 @@
 				<artifactId>maven-source-plugin</artifactId>
 				<version>${maven-source-plugin.version}</version>
 				<inherited>true</inherited>
-<!--
 				<configuration>
 				<includePom>true</includePom>
 				</configuration>
--->
 			</plugin>
   
   <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-assembly-plugin -->  
@@ -478,28 +474,22 @@
 					<detectLinks>true</detectLinks>
 -->
 					<!-- <docfilessubdirs></docfilessubdirs>-->					
-						<!--<includeDependencySources>true</includeDependencySources>-->
+						<includeDependencySources>true</includeDependencySources>
 						<!-- <includeTransitiveDependencySources>true</includeTransitiveDependencySources>-->
 						<javadocVersion>${java.version}</javadocVersion>
 						<keywords>true</keywords>
 					<level>private</level>
 					<linksource>true</linksource>
-<!--
 					<old>true</old>
--->
 					<show>private</show>
 					<stylesheet>maven</stylesheet>
-<!--
 					<validateLinks>true</validateLinks>
--->
 					<linksourcetab>${indentSize}</linksourcetab>
 					<!-- <locale>en</locale> -->
 					<serialwarn>true</serialwarn>
 					<source>${java.version}</source>
 					<sourcetab>${indentSize}</sourcetab>
-<!--
 					<splitindex>true</splitindex>
--->
 					<packagesheader>Innovations Anonymous</packagesheader>
 					<top>Om Krim Krim Krim Hum Hum Hrim Hrim Daksine Kalike</top>
 					<footer>Krim Krim Krim Hum Hum Hrim Hrim Svaha</footer>
@@ -559,9 +549,7 @@
 					<analysisCache>true</analysisCache>
 					<benchmark>true</benchmark>
 					<includeTests>true</includeTests>
-<!--
 					<includeXmlInSite>true</includeXmlInSite>
--->
 					<verbose>${verbose}</verbose>
 				</configuration>
 			</plugin>
