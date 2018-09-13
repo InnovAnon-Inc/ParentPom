@@ -455,7 +455,7 @@
 				<version>${maven-project-info-reports-plugin.version}</version>
 				<inherited>true</inherited>
 				<configuration>
-				<licenseFileEncoding>UTF-8</licenseFileEncoding>				
+				<!--  <licenseFileEncoding>UTF-8</licenseFileEncoding>				 -->
 				</configuration>
 			</plugin>
 
@@ -482,7 +482,7 @@
 					<stylesheet>maven</stylesheet>
 					<validateLinks>true</validateLinks>
 					<linksourcetab>${indentSize}</linksourcetab>
-					<locale>UTF-8</locale>
+					<!-- <locale>en</locale> -->
 					<serialwarn>true</serialwarn>
 					<source>${java.version}</source>
 					<sourcetab>${indentSize}</sourcetab>
@@ -540,7 +540,7 @@
 					</rulesets>
 					<format>xml</format>
 					<linkXref>true</linkXref>
-					<sourceEncoding>UTF-8</sourceEncoding>
+					<!-- <sourceEncoding>UTF-8</sourceEncoding>-->
 					<minimumTokens>100</minimumTokens>
 					<!-- <aggregate></aggregate>-->
 					<analysisCache>true</analysisCache>
