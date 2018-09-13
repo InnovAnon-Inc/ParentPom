@@ -53,8 +53,8 @@
 		<dropbox.repo>${dropbox.path}/mvn-repo</dropbox.repo>
 		<dropbox.site>${dropbox.path}/www/docs/${project.artifactId}</dropbox.site>
 		
-		<debug>false</debug>
-		<detail>false</detail>
+		<debug>true</debug>
+		<detail>true</detail>
 		<indentSize>3</indentSize>
 		<lineLength>120</lineLength>
 		<description>${co_name} Corporate Parent POM for Maven</description>
