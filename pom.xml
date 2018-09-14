@@ -362,11 +362,9 @@
 						<manifest>
 							<mainClass>${project.groupId}.${project.artifactId}.App</mainClass>
 						</manifest>
-<!-- 
 						<addMavenDescriptor>true</addMavenDescriptor>
 						<compress>true</compress>
 						<recompressAddedZips>true</recompressAddedZips>
--->
 					</archive>
 				</configuration>
 			</plugin>
@@ -378,9 +376,7 @@
 				<version>${maven-source-plugin.version}</version>
 				<inherited>true</inherited>
 				<configuration>
-<!--
 				<includePom>true</includePom>
--->
 				</configuration>
 				  <executions>
     <execution>
@@ -423,19 +419,6 @@
 				</configuration>
 			</plugin>
 
-
-
-
-
-
-
-
-
-
-
-
-
-			
 			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-site-plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -443,15 +426,11 @@
 				<version>${maven-site-plugin.version}</version>
 				<inherited>true</inherited>
 				<configuration>
-<!--
 				<generateSitemap>true</generateSitemap>
--->			
 				 
 			 <topSiteURL>${project_url}</topSiteURL> 
-<!--
 				 <validate>true</validate>
--->
-				 <!-- <saveProcessedContent>true</saveProcessedContent>	-->			
+				 <saveProcessedContent>true</saveProcessedContent>			
 				</configuration>
 				<dependencies>
 				<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
