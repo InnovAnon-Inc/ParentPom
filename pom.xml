@@ -50,9 +50,9 @@
 		<scm.url>https://${scm_dp}</scm.url>
 
 		<dropbox.domain>file:///opt/files</dropbox.domain>
-		<dropbox.path>${dropbox.domain}/Dropbox</dropbox.path>
-		<dropbox.repo>${dropbox.path}/mvn-repo</dropbox.repo>
-		<dropbox.site>${dropbox.path}/www/docs/${project.artifactId}</dropbox.site>
+		<dropbox.root>${dropbox.domain}/Dropbox</dropbox.root>
+		<dropbox.repo>${dropbox.root}/mvn-repo</dropbox.repo>
+		<dropbox.path>${dropbox.root}/www/docs/${project.artifactId}</dropbox.path>
 		
 		<detail>true</detail>
 		<verbose>${detail}</verbose>
@@ -179,7 +179,7 @@
 
 		<site>
 			<id>localDropbox</id>
-			<url>${dropbox.site}</url>
+			<url>${dropbox.path}</url>
 		</site>
 	</distributionManagement>
 
