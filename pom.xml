@@ -45,9 +45,9 @@
 		<scm_domain>github.com</scm_domain>
 		<scm_path>InnovAnon-Inc/${project.artifactId}</scm_path>
 		<scm_dp>${scm_domain}/${scm_path}</scm_dp>
-		<scm.connection>scm:git:https://${scm_dp}.git</scm.connection>
-		<scm.developerConnection>scm:git:git@${scm_dp}.git</scm.developerConnection>
-		<scm.url>https://${scm_dp}</scm.url>
+		<scm_connection>scm:git:https://${scm_dp}.git</scm_connection>
+		<scm_developerConnection>scm:git:git@${scm_dp}.git</scm_developerConnection>
+		<scm_url>https://${scm_dp}</scm_url>
 
 		<dropbox.domain>file:///opt/files</dropbox.domain>
 		<dropbox.root>${dropbox.domain}/Dropbox</dropbox.root>
@@ -99,8 +99,7 @@
 	</properties>
 
 	<name>${project.artifactId}</name>
-	<!-- <url>${project_url}</url> -->
-	<url>${project_url_domain}/docs/${project.artifactId}</url>
+	<url>${project_url}</url>
 	<description>${co_name} Corporate Parent POM for Maven</description>
 
 	<issueManagement>
@@ -152,9 +151,9 @@
 	</mailingLists>
 
 	<scm>
-		<connection>${scm.connection}</connection>
-		<developerConnection>${scm.developerConnection}</developerConnection>
-		<url>${scm.url}</url>
+		<connection>${scm_connection}</connection>
+		<developerConnection>${scm_developerConnection}</developerConnection>
+		<url>${scm_url}</url>
 		<tag>HEAD</tag>
 	</scm>
 
@@ -179,7 +178,7 @@
 
 		<site>
 			<id>localDropbox</id>
-			<url>${dropbox.root}/www/docs/${project.artifactId}</url>
+			<url>${dropbox.path}</url>
 		</site>
 	</distributionManagement>
 
