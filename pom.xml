@@ -20,7 +20,6 @@
 		<project_url_path>docs/${project.artifactId}</project_url_path>
 		<project_url>${project_url_domain}/${project_url_path}</project_url>
 		<project_url_top>${project_url_domain}/docs</project_url_top>
-		<project.url>${project_url}</project.url>
 
 		<im.url_domain>${official.url_domain}:1234</im.url_domain>
 		<im.url_path></im.url_path>
@@ -100,7 +99,8 @@
 	</properties>
 
 	<name>${project.artifactId}</name>
-	<url>${project_url_top}/${project.artifactId}</url>
+	<!-- <url>${project_url}</url> -->
+	<url>${project_url_domain}/docs/${project.artifactId}</url>
 	<description>${co_name} Corporate Parent POM for Maven</description>
 
 	<issueManagement>
@@ -179,7 +179,7 @@
 
 		<site>
 			<id>localDropbox</id>
-			<url>${dropbox.path}</url>
+			<url>${dropbox.root}/www/docs/${project.artifactId}</url>
 		</site>
 	</distributionManagement>
 
@@ -428,7 +428,7 @@
 				<configuration>
 				<generateSitemap>true</generateSitemap>
 				 
-			 <topSiteURL>${project_url}</topSiteURL> 
+			 <!-- <topSiteURL>${project_url}</topSiteURL> --> 
 				 <validate>true</validate>
 				 <saveProcessedContent>true</saveProcessedContent>			
 				</configuration>
