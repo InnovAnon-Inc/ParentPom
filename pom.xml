@@ -519,6 +519,7 @@
 					<source>${java.version}</source>
 					<sourcetab>${indentSize}</sourcetab>
 					
+					<failOnError>false</failOnError>
 <!-- 
 					<packagesheader>${project.name} Project</packagesheader>
 					<top>Free Code for a Free World</top>
