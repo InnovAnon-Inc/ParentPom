@@ -362,9 +362,11 @@
 						<manifest>
 							<mainClass>${project.groupId}.${project.artifactId}.App</mainClass>
 						</manifest>
+<!-- 
 						<addMavenDescriptor>true</addMavenDescriptor>
 						<compress>true</compress>
 						<recompressAddedZips>true</recompressAddedZips>
+-->
 					</archive>
 				</configuration>
 			</plugin>
@@ -376,7 +378,9 @@
 				<version>${maven-source-plugin.version}</version>
 				<inherited>true</inherited>
 				<configuration>
+<!--
 				<includePom>true</includePom>
+-->
 				</configuration>
 				  <executions>
     <execution>
@@ -418,6 +422,19 @@
 					<debug>${debug}</debug>
 				</configuration>
 			</plugin>
+
+
+
+
+
+
+
+
+
+
+
+
+
 			
 			<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-site-plugin -->
 			<plugin>
@@ -426,12 +443,14 @@
 				<version>${maven-site-plugin.version}</version>
 				<inherited>true</inherited>
 				<configuration>
+<!--
 				<generateSitemap>true</generateSitemap>
-				
-				<!--<topSiteURL>${project.url_top}</topSiteURL>-->
-			  <!-- <topSiteURL>${project.url}</topSiteURL>  -->
-				 
+-->			
+				<!-- <topSiteURL>${project.url_top}</topSiteURL>-->
+			 <!-- <topSiteURL>${project.url}</topSiteURL> -->
+<!--
 				 <validate>true</validate>
+-->
 				 <!-- <saveProcessedContent>true</saveProcessedContent>	-->			
 				</configuration>
 				<dependencies>
@@ -450,12 +469,11 @@
 </dependency>
 				</dependencies>
 			</plugin>
-			
+<!--			
 			<plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-javadoc-plugin</artifactId>
 			<version>${maven-javadoc-plugin.version}</version>
-			<!-- 
 			<executions>
     <execution>
       <id>attach-javadocs</id>
@@ -464,8 +482,8 @@
       </goals>
     </execution>
   </executions>
-  -->
 			</plugin>
+-->
 		</plugins>
 	</build>
 	
@@ -500,29 +518,34 @@
 				<configuration>
 					<defaultAuthor>${co_name}</defaultAuthor>
 					<!--  <charset></charset>-->
-					<description>${description}</description>	
+					<description>${description}</description>
+<!--	
 					<detectLinks>true</detectLinks>
+					<keywords>true</keywords>
+					<linksource>true</linksource>
+					<old>true</old>
+					<validateLinks>true</validateLinks>
+					<serialwarn>true</serialwarn>
+					<splitindex>true</splitindex>
+-->
 					<!-- <docfilessubdirs></docfilessubdirs>-->					
 						<!-- <includeDependencySources>true</includeDependencySources> -->
 						<!-- <includeTransitiveDependencySources>true</includeTransitiveDependencySources>-->
 						<!-- <javadocVersion>1.5</javadocVersion>-->
-						<keywords>true</keywords>
-					<level>private</level>
-					<linksource>true</linksource>
-					<old>true</old>
-					<show>private</show>
-					<stylesheet>java</stylesheet>
-					<validateLinks>true</validateLinks>
 					<!-- <locale>en</locale> -->
-					<serialwarn>true</serialwarn>
+					
+					<level>private</level>
+					<show>private</show>
+					<stylesheet>maven</stylesheet>
 					<source>${java.version}</source>
 					<sourcetab>${indentSize}</sourcetab>
-					<splitindex>true</splitindex>
 					
+<!-- 
 					<packagesheader>${project.name} Project</packagesheader>
 					<top>Free Code for a Free World</top>
 					<footer>InnovAnon, Inc.</footer>
 					<header>Innovations Anonymous</header>
+-->
 					
 					<!-- 
 					<resourcesArtifacts>
