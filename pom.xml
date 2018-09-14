@@ -16,10 +16,10 @@
 		<email3>InnovAnon-Inc@tutanota.com</email3>
 		<email4>InnovAnon@mailfence.com</email4>
 
-		<project.url_domain>${official.url_domain}:80</project.url_domain>
-		<project.url_path>docs/${project.artifactId}</project.url_path>
-		<project.url>${project.url_domain}/${project.url_path}</project.url>
-		<project.url_top>${project.url_domain}/docs</project.url_top>
+		<project_url_domain>${official.url_domain}:80</project_url_domain>
+		<project_url_path>docs/${project.artifactId}</project_url_path>
+		<project_url>${project_url_domain}/${project_url_path}</project_url>
+		<project_url_top>${project_url_domain}/docs</project_url_top>
 
 		<im.url_domain>${official.url_domain}:1234</im.url_domain>
 		<im.url_path></im.url_path>
@@ -52,7 +52,7 @@
 		<dropbox.domain>file:///opt/files</dropbox.domain>
 		<dropbox.path>${dropbox.domain}/Dropbox</dropbox.path>
 		<dropbox.repo>${dropbox.path}/mvn-repo</dropbox.repo>
-		<dropbox.site>${dropbox.path}/www/docs</dropbox.site>
+		<dropbox.site>${dropbox.path}/www/docs/${project.artifactId}</dropbox.site>
 		
 		<detail>true</detail>
 		<verbose>${detail}</verbose>
@@ -100,7 +100,7 @@
 	</properties>
 
 	<name>${project.artifactId}</name>
-	<url>${project.url}</url>
+	<url>${project_url}</url>
 	<description>${description}</description>
 
 	<issueManagement>
@@ -446,8 +446,8 @@
 <!--
 				<generateSitemap>true</generateSitemap>
 -->			
-				 <topSiteURL>${project.url_top}</topSiteURL>
-			 <!-- <topSiteURL>${project.url}</topSiteURL> -->
+				 
+			 <topSiteURL>${project_url}</topSiteURL> 
 <!--
 				 <validate>true</validate>
 -->
