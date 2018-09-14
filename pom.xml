@@ -20,6 +20,7 @@
 		<project_url_path>docs/${project.artifactId}</project_url_path>
 		<project_url>${project_url_domain}/${project_url_path}</project_url>
 		<project_url_top>${project_url_domain}/docs</project_url_top>
+		<project.url>${project_url}</project.url>
 
 		<im.url_domain>${official.url_domain}:1234</im.url_domain>
 		<im.url_path></im.url_path>
@@ -59,7 +60,6 @@
 		<debug>${verbose}</debug>
 		<indentSize>3</indentSize>
 		<lineLength>120</lineLength>
-		<description>${co_name} Corporate Parent POM for Maven</description>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		
@@ -100,8 +100,8 @@
 	</properties>
 
 	<name>${project.artifactId}</name>
-	<url>${project_url}</url>
-	<description>${description}</description>
+	<url>${project_url_top}/${project.artifactId}</url>
+	<description>${co_name} Corporate Parent POM for Maven</description>
 
 	<issueManagement>
 		<system>Bugzilla</system>
